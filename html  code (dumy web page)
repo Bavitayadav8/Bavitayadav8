@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        description=". Make Financial Goals · 2. Form Timelines · 3. Know your Risk Appetite · 4. Calculate with SIP Mutual Fund Calculator: · 5. Seek Financial Advice" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/> -->
+
+    <style>
+        body {
+            font-family: 'Nunito Sans', sans-serif;
+            ;
+        }
+
+        .container-nav {
+            border-bottom: 1px solid #707070;
+            width: 100%;
+        }
+
+        .nav-link {
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 26px;
+            color: #000000;
+            text-transform: capitalize;
+        }
+
+        .pricing-section {
+            margin: 100px 0px;
+            background-image: url('mask-grp.png');
+            background-repeat: no-repeat;
+            background-position: right;
+            background-size: auto;
+        }
+
+        .main-heading {
+            font-size: 40px;
+            line-height: 54px;
+            font-weight: 900;
+            color: #000000;
+        }
+
+        .para {
+            font-size: 18px;
+            line-height: 24px;
+            font-weight: normal;
+            margin-bottom: 50px;
+        }
+
+        .pricing {
+            background: #1492E6 0% 0% no-repeat padding-box;
+            box-shadow: 0px 16px 48px #00000029;
+            border-radius: 33px;
+            padding: 15px 50px;
+            font-size: 23px;
+            line-height: 31px;
+            font-weight: 600;
+            color: #FFFFFF;
+        }
+
+        .heading {
+            font-size: 35px;
+            line-height: 47px;
+            font-weight: bold;
+            margin-bottom: 50px;
+        }
+
+        .card-image-sec {
+            margin-bottom: 100px;
+        }
+
+        .card-section {
+            margin-bottom: 100px;
+            padding: 80px 0px;
+            background-color: #F8FAFC;
+        }
+
+        .card-box {
+            box-shadow: 0px 3px 6px #00000029;
+            border-radius: 18px;
+            padding: 40px 20px;
+            background: #FFFFFF 0% 0% no-repeat padding-box;
+            margin: 40px;
+        }
+
+        .card-heading {
+            font-size: 18px;
+            line-height: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .card-para {
+            font-size: 18px;
+            line-height: 24px;
+        }
+
+        .simple-card {
+            text-align: left;
+        }
+
+        .simple-card img {
+            width: 240px;
+            height: 187px;
+            border: none;
+            margin-bottom: 40px;
+        }
+
+        .img-heading {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .img-heading+p {
+            font-size: 21px;
+            line-height: 28px;
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+
+        .inner-heading {
+            margin-left: 30px;
+            padding-top: 17px;
+            font-size: 24px;
+            line-height: 32px;
+            font-weight: bold;
+        }
+
+        .left-right-sec {
+            margin-bottom: 100px;
+        }
+
+        .left-right-sec>div:first-child {
+            margin-bottom: 100px;
+        }
+
+        .slider-sec {
+            padding-bottom: 180px;
+        }
+
+        .slider-wrapper {
+            background: #F8FAFC 0% 0% no-repeat padding-box;
+            box-shadow: 0px 16px 48px #00000029;
+            border-radius: 42px;
+            padding: 40px 40px 0px 40px;
+        }
+
+        .slider-box-wrapper {
+            padding: 0px 30px 0px 70px;
+            position: relative;
+            top: 70px;
+            background:none;
+            box-shadow:none;
+        }
+
+        .multiple-items {
+            background-color: #F8FAFC;
+        }
+
+        .slider-subtext {
+            display: flex;
+        }
+
+        .slider-subtext h3 {
+            margin-left: 20px;
+            padding-top: 13px;
+        }
+
+        .slider-boxmodel {
+            background: #FFFFFF 0% 0% no-repeat padding-box;
+            box-shadow: 0px 16px 48px #00000029;
+            border-radius: 30px;
+            padding: 30px;
+        }
+
+        .left-arrow {
+            left: -120px;
+        }
+
+        .right-arrow {
+            right: -90px;
+        }
+
+        .slick-arrow {
+            position: absolute;
+            top: 40%;
+            background: #FFFFFF 0% 0% no-repeat padding-box;
+            box-shadow: 0px 7px 17px #00000029;
+            color: grey;
+            width: 62px;
+            height: 63px;
+            border: none;
+            border-radius: 50%;
+        }
+
+        .username-img {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .username-img img {
+            width: 45px;
+            height: 45px;
+        }
+
+        .name-pos {
+            display: flex;
+            flex-direction: column;
+            flex-basis: 75%;
+        }
+
+        .name-star {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .name-star img {
+            width: 14px;
+            height: 14px;
+        }
+
+        .name-star p {
+            font-size: 13px;
+            font-weight: 600;
+            line-height: 18px;
+        }
+
+        .designation {
+            font-size: 12px;
+            line-height: 16px;
+            font-weight: 600;
+        }
+
+        .box-para {
+            font-size: 13px;
+            line-height: 18px;
+            font-weight: normal;
+        }
+
+        .partner-sec {
+            margin-bottom: 100px;
+        }
+
+        .partner-img-text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+        }
+
+        .partner-img-text h5 {
+            font-size: 18px;
+            line-height: 24px;
+            font-weight: bold;
+            
+        }
+
+        .partner-img {
+            height: 70px;
+            
+        }
+        .partner-img1 {
+            background-color:lightgray;
+        }
+
+        .footer-sec {
+            padding-top: 300px;
+            color: #fff;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Nav section -->
+
+    <div class="container-nav" style="max-width:100%; padding:0px;">
+        <div class="row justify-content-center">
+            <!-- Just an image -->
+            <nav class="navbar">
+                <a class="navbar-brand" href="#">
+                    <img src="8b8e3bae-8dbe-4c4a-b3fa-b1f1431d1f0c.png" width="164" height="48" alt="">
+                </a>
+        </div>
+        <ul class="nav justify-content-center ">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">nav1</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">nav2</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    nav3
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    nav4
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">nav5</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">nav6</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">nav7</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">nav8</a>
+            </li>
+            </nav>
+    </div>
+
+   
+    <!-- pricing section -->
+    <section class="pricing-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1 class="main-heading"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </h1>
+                    <p class="para"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed commodo
+                        est.Pellentesque eu placerat mauris. Etiam ut maximus ante. Suspendisse varius dolor nec
+                        bibendum dignissim. Proin in diam a justo sollicitudin mattis eu sagittis nunc. In hac habitasse
+                        platea dictumst.</p>
+                    <button type="button" class="btn btn-primary pricing"> Check Pricing </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- three card section -->
+
+    <section class="card-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12" style="background-color:white">
+                    <h2 class="heading text-center"> Lorem ipsum dolor sit amet,consectetur adipiscing elit. </h2>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card-box">
+                        <h3 class="card-heading text-center"> Lorem ipsum dolor sit .</h3>
+                        <p class="card-para">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed commodo
+                            est.Pellentesque eu
+                            placerat mauris. Etiam ut maximus ante. Suspendisse varius dolor nec bibendum dignissim.
+                            Proin
+                            in diam a justo sollicitudin mattis eu sagittisnunc. In hac habitasse.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card-box">
+                        <h3 class="card-heading text-center"> Lorem ipsum dolor sit .</h3>
+                        <p class="card-para">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed commodo
+                            est.Pellentesque eu
+                            placerat mauris. Etiam ut maximus ante. Suspendisse varius dolor nec bibendum dignissim.
+                            Proin
+                            in diam a justo sollicitudin mattis eu sagittisnunc. In hac habitasse.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card-box">
+                        <h3 class="card-heading text-center"> Lorem ipsum dolor sit .</h3>
+                        <p class="card-para">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed commodo
+                            est.Pellentesque eu
+                            placerat mauris. Etiam ut maximus ante. Suspendisse varius dolor nec bibendum dignissim.
+                            Proin
+                            in diam a justo sollicitudin mattis eu sagittisnunc. In hac habitasse.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="card-image-sec">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="heading text-center"> Lorem ipsum dolor sit amet,consectetur adipiscing elit. </h2>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="simple-card">
+                        <img src="lady.png" class="img-thumbnail" alt="...">
+                        <h3 class="card-heading"> Lorem ipsum dolor sit .</h3>
+                        <p class="card-para">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed commodo
+                            est.Pellentesque eu
+                            placerat mauris. Etiam ut maximus ante. Suspendisse varius dolor nec bibendum dignissim.
+                            Proin
+                            in diam a justo sollicitudin mattis eu sagittisnunc. In hac habitasse.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="simple-card">
+                        <img src="boy.png" class="img-thumbnail" alt="...">
+                        <h3 class="card-heading"> Lorem ipsum dolor sit .</h3>
+                        <p class="card-para">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed commodo
+                            est.Pellentesque eu
+                            placerat mauris. Etiam ut maximus ante. Suspendisse varius dolor nec bibendum dignissim.
+                            Proin
+                            in diam a justo sollicitudin mattis eu sagittisnunc. In hac habitasse.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="simple-card">
+                        <img src="girl.png" class="img-thumbnail" alt="...">
+                        <h3 class="card-heading"> Lorem ipsum dolor sit .</h3>
+                        <p class="card-para">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed commodo
+                            est.Pellentesque eu
+                            placerat mauris. Etiam ut maximus ante. Suspendisse varius dolor nec bibendum dignissim.
+                            Proin
+                            in diam a justo sollicitudin mattis eu sagittisnunc. In hac habitasse.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- third section -->
+    <section class="left-right-sec">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="heading text-center">Lorem ipsum dolor sit amet,consectetur adipiscing elit.</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="img-heading">
+                        <img src="money.png" class="img-hand" alt="..." width="60" height="60">
+                        <h1 class="inner-heading text-left"> Lorem ipsum dolor sit .</h1>
+                    </div>
+                    <p>adipiscing elit. Ut sed commodo est.Pellentesque eu placerat mauris. ut maximus ante.
+                        Suspendisse varius dolor nec bibendum dignissim</p>
+                    <button type="button" class="btn btn-primary pricing"> Check Pricing </button>
+                </div>
+            </div>
+            <div class="row justify-content-end">
+                <div class="col-md-5">
+                    <div class="img-heading">
+                        <img src="goal.png" class="img-arrow" alt="..." width="60" height="60">
+                        <h1 class="inner-heading text-left"> Lorem ipsum dolor sit .</h1>
+                    </div>
+                    <p>adipiscing elit. Ut sed commodo est.Pellentesque eu placerat mauris. ut maximus ante. Suspendisse
+                    </p>
+                    <button type="button" class="btn btn-primary pricing"> Check Pricing </button>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row justify-content-start">
+                <div class="col-md-7">
+                    <div class="img-heading">
+                        <img src="check.png" class="img-arrow" alt="..." width="60" height="60">
+                        <h1 class="inner-heading text-left"> Lorem ipsum dolor sit .</h1>
+                    </div>
+                    <p>adipiscing elit. Ut sed commodo est.Pellentesque eu placerat mauris. ut maximus ante. Suspendisse
+                    </p>
+                    <button type="button" class="btn btn-primary pricing"> Check Pricing </button>
+                </div>
+            </div>
+            <div class="row justify-content-end">
+                <div class="col-md-5">
+                    <div class="img-heading">
+                        <img src="money-back.png" class="img-fluid img-arrow" alt="..." width="60" height="60">
+                        <h1 class="inner-heading text-left"> Lorem ipsum dolor sit .</h1>
+                    </div>
+                    <p>adipiscing elit. Ut sed commodo est.Pellentesque eu placerat mauris. ut maximus ante. Suspendisse
+                    </p>
+                    <button type="button" class="btn btn-primary pricing"> Check Pricing </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- slider section -->
+    <section class="slider-sec">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="heading text-center"> Lorem ipsum dolor sit . </h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="slider-wrapper">
+                        <div class="slider-subtext">
+                            <img src="star.png" class="img-fluid" alt="" width="60" />
+                            <h3> Lorem ipsum dolor sit . </h3>
+                        </div>
+                        <!-- Using slick slider -->
+                        <div class="slider-box-wrapper">
+                            <div class="row multiple-items" style="background-color: #F7FAFC!important;">
+
+                                <div class="col-md-3"
+                                    style="flex: 22%!important; width: auto !important; background-color: #F7FAFC!important;">
+                                    <div class="slider-boxmodel">
+                                        <div class="outer-div">
+                                            <div class="username-img">
+                                                <img src="user-1.png" class="img-fluid" alt="" width="">
+                                                <div class="name-pos">
+                                                    <div class="name-star">
+                                                        <p> John Doe </p>
+                                                        <div class="d-flex justify-content-between align-items-start">
+
+                                                            <img src="star-rating.png" class="img-fluid" alt="" />
+                                                            <img src="star-rating.png" class="img-fluid" alt="" />
+                                                            <img src="star-rating.png" class="img-fluid" alt="" />
+                                                            <img src="star-rating.png" class="img-fluid" alt="" />
+                                                        </div>
+                                                    </div>
+                                                    <p class="designation"> Customer Service Manager </p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <p class="box-para">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed
+                                            commodo est.
+                                            Pellentesque eu placerat mauris. Etiam ut maximus ante. Suspendisse
+                                            varius
+                                            dolor nec bibendum dignissim. Proin in diam a justo sollicitudin
+                                            mattis eu
+                                            sagittis nunc. In hac habitasse platea dictumst.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3" style="flex: 22%!important; width: auto !important;">
+                                    <div class="slider-boxmodel">
+                                        <div class="outer-div">
+                                            <div class="username-img">
+                                                <img src="user-2.png" class="img-fluid" alt="" width="">
+                                                <div class="name-pos">
+                                                    <div class="name-star">
+                                                        <p> Amanda green </p>
+                                                        <div class="d-flex justify-content-between align-items-start">
+
+                                                            <img src="star-rating.png" class="img-fluid" alt="" />
+                                                            <img src="star-rating.png" class="img-fluid" alt="" />
+                                                            <img src="star-rating.png" class="img-fluid" alt="" />
+                                                            <img src="star-rating.png" class="img-fluid" alt="" />
+                                                        </div>
+                                                    </div>
+                                                    <p class="designation"> Service Manager </p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <p class="box-para">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed
+                                            commodo est.
+                                            Pellentesque eu placerat mauris. Etiam ut maximus ante. Suspendisse
+                                            varius
+                                            dolor nec bibendum dignissim. Proin in diam a justo sollicitudin
+                                            mattis eu
+                                            sagittis nunc. In hac habitasse platea dictumst.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3" style="flex: 22%!important; width: auto !important;">
+                                    <div class="slider-boxmodel">
+                                        <div class="outer-div">
+                                            <div class="username-img">
+                                                <img src="user-3.png" class="img-fluid" alt="" width="">
+                                                <div class="name-pos">
+                                                    <div class="name-star">
+                                                        <p> Amanda green </p>
+                                                        <div class="d-flex justify-content-between align-items-start">
+
+                                                            <img src="star-rating.png" class="img-fluid" alt="" />
+                                                            <img src="star-rating.png" class="img-fluid" alt="" />
+                                                            <img src="star-rating.png" class="img-fluid" alt="" />
+                                                            <img src="star-rating.png" class="img-fluid" alt="" />
+                                                        </div>
+                                                    </div>
+                                                    <p class="designation"> Operations Manager </p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <p class="box-para">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed
+                                            commodo est.
+                                            Pellentesque eu placerat mauris. Etiam ut maximus ante. Suspendisse
+                                            varius
+                                            dolor nec bibendum dignissim. Proin in diam a justo sollicitudin
+                                            mattis eu
+                                            sagittis nunc. In hac habitasse platea dictumst.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3" style="flex: 22%!important; width: auto !important;">
+                                    <div class="slider-boxmodel">
+                                        <div class="outer-div">
+                                            <div class="username-img">
+                                                <img src="user-2.png" class="img-fluid" alt="" width="">
+                                                <div class="name-pos">
+                                                    <div class="name-star">
+                                                        <p> Sam Cooper </p>
+                                                        <div class="d-flex justify-content-between align-items-start">
+
+                                                            <img src="star-rating.png" class="img-fluid" alt="" />
+                                                            <img src="star-rating.png" class="img-fluid" alt="" />
+                                                            <img src="star-rating.png" class="img-fluid" alt="" />
+                                                            <img src="star-rating.png" class="img-fluid" alt="" />
+                                                        </div>
+                                                    </div>
+                                                    <p class="designation"> Operations Manager </p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <p class="box-para">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed
+                                            commodo est.
+                                            Pellentesque eu placerat mauris. Etiam ut maximus ante. Suspendisse
+                                            varius
+                                            dolor nec bibendum dignissim. Proin in diam a justo sollicitudin
+                                            mattis eu
+                                            sagittis nunc. In hac habitasse platea dictumst.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- partnership section -->
+    <section class="partner-sec">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="heading text-center">Lorem ipsum dolor sit amet,consectetur adipiscing elit.</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="partner-img-text">
+                        <div class="bg-image fire"> </div>
+                        <img src="form-on-fire.png" class="partner-img1 img-fluid" alt="" width="190" />
+                        <h5> Form on Fire </h5>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="partner-img-text">
+                        <img src="electroneek.png" class="partner-img img-fluid" alt="" width="140" />
+                        <h5> ElectroNeek Studio IDE </h5>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="partner-img-text">
+                        <img src="jot-form.png" class="partner-img img-fluid" alt="" width="80" />
+                        <h5> Jot Form </h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer section -->
+
+    <footer>
+        <div class="container" style="max-width:100%; padding:0px; background-color: #000;">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="footer-sec text-center">
+                        <p> &copy; Helplama 2021 </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://kit.fontawesome.com/225aa6ef5c.js" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.multiple-items').slick({
+                accessibility: true,
+                arrows: true,
+                autoplay: false,
+                infinite: true,
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                prevArrow: '<button type="button" class="btn btn-primary btn-sm left-arrow"> <i class="fa-solid fa-angle-left"></i> </button>',
+                nextArrow: '<button type="button" class="btn btn-primary btn-sm right-arrow"> <i class="fa-solid fa-angle-right"></i> </button>'
+            });
+        });
+    </script>
+</body>
+
+</html>
